@@ -14,9 +14,9 @@ const StyledTile = styled.div`
 `
 
 function Tile(props) {
-    console.log()
+    console.log(props.tile)
     return(
-        <StyledTile>A</StyledTile>
+        <StyledTile>{props.randomizeTile(props.tile.tileValueArray)}</StyledTile>
     )
 }
 

@@ -7,17 +7,17 @@ const StyledBoard = styled.div`
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10%;
-    border: 5px solid black;
-    background: lightgray;
+    border: 5px solid green;
+    background: #ADDCAD;
     padding: 10px;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
 
 function BoardContainer(props) {
     return (
         <StyledBoard>
-            {props.tiles.map((tile, index) => <Tile tile={tile} key={index} index={index}/>)}
+            {props.tiles.map((tile, index) => <Tile tile={tile} key={index} index={index} randomizeTile={props.randomizeTile}/>)}
         </StyledBoard>
     )
 }
