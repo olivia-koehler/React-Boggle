@@ -4,10 +4,12 @@ import styled from "styled-components";
 import BoardContainer from "./Components/BoardContainer"
 
 const AppWrapper = styled.div`
-  width: 410px;
-  margin: auto;
+    width: 800px;
+    margin: auto;
 `
-
+const Title = styled.h1`
+  font-size: 3rem
+`
 
 
 
@@ -39,10 +41,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.tiles)
-    console.log(this.state.tiles.map(tile => {return "hello"}))
     return (
       <AppWrapper className="App">
+        <Title>Welcome to Boggle!</Title>
         <BoardContainer tiles={this.state.tiles} />
       </AppWrapper>
     );

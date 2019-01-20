@@ -10,6 +10,7 @@ const StyledTile = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    background: white;
 `
 
 function Tile(props) {
