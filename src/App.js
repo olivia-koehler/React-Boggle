@@ -9,6 +9,8 @@ const AppWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom 100%;
+    background: #E9F2E9;
 `
 const Title = styled.h1`
   font-size: 3rem
@@ -37,19 +39,20 @@ class App extends Component {
   constructor() {
     super() 
     this.state = {
-      tiles: []
+      tiles: tilesData,
+      randomizedTiles: []
     }
   }
 
-  componentDidMount() {
-    let randomizedData = tilesData
+  randomizeArray = e => {
+    let randomizedData = this.state.tiles;
     for (let i=randomizedData.length -1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       let temp = randomizedData[i];
       randomizedData[i] = randomizedData[j];
       randomizedData[j] = temp;
     }
-    this.setState({tiles: randomizedData})
+    this.setState({randomizedTiles: randomizedData})
   }
 
   randomizeTile = arr => {
@@ -62,7 +65,7 @@ class App extends Component {
       <AppWrapper className="App">
         <Title>Welcome to Boggle!</Title>
         <BoardContainer tiles={this.state.tiles} randomizeTile={this.randomizeTile} />
-        <ScrambleButton/>
+        <ScrambleButton randomizeArray={this.randomizeArray} tiles={this.state.tiles}/>
       </AppWrapper>
     );
   }

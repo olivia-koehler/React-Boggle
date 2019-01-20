@@ -8,6 +8,7 @@ const StyledButton = styled.div`
     margin: 20px;
     padding: 10px 30px;
     font-weight: bold;
+    background: white;
 
     &:hover {
         cursor: pointer;
@@ -17,7 +18,7 @@ const StyledButton = styled.div`
 
 function ScrambleButton(props) {
     return (
-            <StyledButton onClick={() => window.location.reload()}>Scramble the board!</StyledButton>
+            <StyledButton onClick={() => props.randomizeArray()}>Scramble the board!</StyledButton>
     )
 }
 
